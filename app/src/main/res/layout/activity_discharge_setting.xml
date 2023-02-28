@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/btn_init_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/btn_close"
+                app:layout_constraintBottom_toBottomOf="@+id/cl1"
+                app:layout_constraintStart_toStartOf="@+id/cl1"
+                app:layout_constraintTop_toTopOf="@+id/cl1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="151dp"
+                android:layout_marginEnd="153dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:text="분비물"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toBottomOf="@+id/cl1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cl1" />
+
+            <Button
+                android:id="@+id/save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/chipBackgroundColor_unclicked"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="right|center_vertical"
+                android:paddingRight="16dp"
+                android:text="완료"
+                android:textColor="@color/red_e1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/painTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_medium"
+                android:text="냉 분비량"
+                android:textColor="#000000"
+                android:textSize="14dp" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipSpacingHorizontal="10dp"
+                app:selectionRequired="false"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/very_little"
+                    style="@style/CustomChipStyle_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:textAppearance="@style/ChipText"
+                    android:text="아주 적음"
+                    android:textSize="12dp"
+                    android:theme="@style/CustomChipStyle_red"
+                    app:ensureMinTouchTargetSize="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/little"
+                    style="@style/CustomChipStyle_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:textAppearance="@style/ChipText"
+                    android:text="적음"
+                    android:textSize="12dp"
+                    android:theme="@style/CustomChipStyle_red"
+                    app:ensureMinTouchTargetSize="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/normal"
+                    style="@style/CustomChipStyle_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:textAppearance="@style/ChipText"
+                    android:text="보통"
+                    android:textSize="12dp"
+                    android:theme="@style/CustomChipStyle_red"
+                    app:ensureMinTouchTargetSize="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/much"
+                    style="@style/CustomChipStyle_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:textAppearance="@style/ChipText"
+                    android:text="많음"
+                    android:textSize="12dp"
+                    android:theme="@style/CustomChipStyle_red"
+                    app:ensureMinTouchTargetSize="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/very_much"
+                    style="@style/CustomChipStyle_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:textAppearance="@style/ChipText"
+                    android:text="아주 많음"
+                    android:textSize="12dp"
+                    android:theme="@style/CustomChipStyle_red"
+                    app:ensureMinTouchTargetSize="false" />
+            </com.google.android.material.chip.ChipGroup>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/excretaTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_medium"
+                android:text="촉감"
+                android:textColor="#000000"
+                android:textSize="14dp" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:chipSpacingHorizontal="10dp"
+                app:chipSpacingVertical="10dp"
+                app:selectionRequired="false"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/sticky"
+                    style="@style/CustomChipStyle_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:textAppearance="@style/ChipText"
+                    android:text="끈적하고 점도가 높다"
+                    android:textSize="12dp"
+                    android:theme="@style/CustomChipStyle_red"
+                    app:ensureMinTouchTargetSize="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/creamy"
+                    style="@style/CustomChipStyle_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:textAppearance="@style/ChipText"
+                    android:text="크림 같다"
+                    android:textSize="12dp"
+                    android:theme="@style/CustomChipStyle_red"
+                    app:ensureMinTouchTargetSize="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/egg_white"
+                    style="@style/CustomChipStyle_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:textAppearance="@style/ChipText"
+                    android:text="계란 흰자 같다"
+                    android:textSize="12dp"
+                    android:theme="@style/CustomChipStyle_red"
+                    app:ensureMinTouchTargetSize="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/watery"
+                    style="@style/CustomChipStyle_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:textAppearance="@style/ChipText"
+                    android:text="묽다"
+                    android:textSize="12dp"
+                    android:theme="@style/CustomChipStyle_red"
+                    app:ensureMinTouchTargetSize="false" />
+            </com.google.android.material.chip.ChipGroup>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

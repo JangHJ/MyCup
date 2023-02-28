@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "275890613023",
+    "project_id": "mycup2-15956",
+    "storage_bucket": "mycup2-15956.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275890613023:android:d9c5f7f74dbcedd62e9e2a",
+        "android_client_info": {
+          "package_name": "com.yours.mycup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "275890613023-jp993jkujohfm7a6ui7cfbt0r2nto4fh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yours.mycup",
+            "certificate_hash": "ccafd19b1b622295025677ad661efc6967f70a2a"
+          }
+        },
+        {
+          "client_id": "275890613023-dsraj155q5sconsmv55fbqm53imnoins.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCu1OyMBr01Thy9GN3wRbmlQP_dL8pZvhw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "275890613023-dsraj155q5sconsmv55fbqm53imnoins.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/month_popup"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_bg"
+    android:orientation="vertical"
+    android:paddingTop="32dp"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto_bold"
+            android:text="용품"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/save_button_supplypicker"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="16dp"
+            android:background="@color/chipBackgroundColor_unclicked"
+            android:gravity="right|center_vertical"
+            android:text="완료"
+            android:fontFamily="@font/roboto_regular"
+            android:textSize="12dp"
+            android:textColor="@color/red_e1" />
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/typepicker"
+        layout="@layout/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:theme="@style/CustomPicker"/>
+
+</LinearLayout>

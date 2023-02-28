@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="280dp"
+    android:layout_height="100dp">
+
+    <TextView
+        android:id="@+id/textForFix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="24dp"
+        android:text="수정하시겠습니까?"
+        android:textColor="#de000000"
+        android:fontFamily="@font/roboto_regular"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="취소"
+        android:paddingVertical="18dp"
+        android:paddingEnd="15dp"
+        android:paddingStart="14dp"
+        android:textColor="@color/gray_66"
+        android:fontFamily="@font/roboto_medium"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/save_button"
+        app:layout_constraintTop_toBottomOf="@+id/textForFix"/>
+
+    <TextView
+        android:id="@+id/save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:paddingVertical="18dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="14dp"
+        android:text="확인"
+        android:textColor="@color/red_e1"
+        android:fontFamily="@font/roboto_medium"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textForFix"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.BottomNavigationView"
+        parent="Widget.Design.BottomNavigationView">
+        <item name="android:textSize">10sp</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+    </style>
+    <style name="MyTimePickerTheme" parent="android:Widget.Material.Light.TimePicker">
+        <item name="android:timePickerMode">spinner</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="colorAccent">@color/black</item>
+    </style>
+
+    <style name="CustomChipStyle_red" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/chip_background_color</item>
+        <item name="chipStrokeColor">@color/chip_stroke_color</item>
+        <item name="chipStrokeWidth">0.5dp</item>
+        <item name="height">28dp</item>
+        <item name="fontFamily">@font/roboto_regular</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/chip_text_color</item>
+        <item name="rippleColor">@android:color/transparent</item>
+    </style>
+    <style name="CustomChipStyle_green" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/chip_background_color_green</item>
+        <item name="chipStrokeColor">@color/chip_stroke_color_green</item>
+        <item name="chipStrokeWidth">0.5dp</item>
+        <item name="height">28dp</item>
+        <item name="android:textColor">@color/chip_text_color</item>
+        <item name="rippleColor">@android:color/transparent</item>
+    </style>
+
+    <style name="ChipText" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:textSize">12dp</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+    </style>
+    <style name="CustomBottomSheetDialog" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetDialog</item>
+    </style>
+    <style name="CustomBottomSheet" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="shapeAppearanceOverlay">@style/CustomShapeAppearanceBottomSheetDialog</item>
+    </style>
+    <style name="CustomShapeAppearanceBottomSheetDialog" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">8dp</item>
+        <item name="cornerSizeTopLeft">8dp</item>
+    </style>
+    <style name="CustomCheckBox" parent="Theme.MaterialComponents">
+        <item name="colorAccent">@color/red_e1</item>
+        <item name="colorControlNormal">@color/gray_c5</item>
+    </style>
+    <style name="CustomPicker">
+        <item name="android:textSize">12dp</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+</resources>

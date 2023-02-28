@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".init.InitActivity2">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/btn_init2_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/btn_back"
+                app:layout_constraintBottom_toBottomOf="@+id/cl1"
+                app:layout_constraintStart_toStartOf="@+id/cl1"
+                app:layout_constraintTop_toTopOf="@+id/cl1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:text="초기 설정"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toBottomOf="@+id/cl1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/btn_init2_back"
+                app:layout_constraintTop_toTopOf="@+id/cl1"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_init2_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="평균 월경 주기와 기간은 어떻게 되나요?"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl1"/>
+
+        <EditText
+            android:id="@+id/tv_init2_cycle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="24dp"
+            android:background="@drawable/edittext_custom_line"
+            android:backgroundTint="@color/gray_a7"
+            android:focusable="false"
+            android:focusableInTouchMode="true"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="주기"
+            android:imeOptions="actionDone"
+            android:paddingLeft="7dp"
+            android:paddingBottom="9.7dp"
+            android:singleLine="true"
+            android:textColor="@color/gray_66"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toStartOf="@id/tv_init2_term"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_init2_question" />
+
+        <EditText
+            android:id="@+id/tv_init2_term"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="16dp"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
+            android:focusableInTouchMode="true"
+            android:focusable="false"
+            android:background="@drawable/edittext_custom_line"
+            android:backgroundTint="@color/gray_a7"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="기간"
+            android:paddingLeft="7dp"
+            android:paddingBottom="9.7dp"
+            android:textColor="@color/gray_66"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/tv_init2_question"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/tv_init2_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/roboto_light"
+            android:text="월경주기(Interval) : 월경 시작일 ~ 다음 월경 시작일\n월경기간(Duration) : 월경 시작일 ~ 월경 종료일"
+            android:textColor="@color/gray_a7"
+            android:textSize="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_init2_cycle"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <Button
+            android:id="@+id/btn_init2_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/init_button_next_enabled_false"
+            android:stateListAnimator="@null"
+            android:fontFamily="@font/roboto_bold"
+            android:text="완료"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

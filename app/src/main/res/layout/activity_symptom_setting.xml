@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/btn_init_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/btn_close"
+                app:layout_constraintBottom_toBottomOf="@+id/cl1"
+                app:layout_constraintStart_toStartOf="@+id/cl1"
+                app:layout_constraintTop_toTopOf="@+id/cl1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="151dp"
+                android:layout_marginEnd="153dp"
+                android:gravity="center"
+                android:text="증상"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:fontFamily="@font/roboto_medium"
+                app:layout_constraintBottom_toBottomOf="@+id/cl1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cl1" />
+
+            <Button
+                android:id="@+id/save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/chipBackgroundColor_unclicked"
+                android:gravity="right|center_vertical"
+                android:paddingRight="16dp"
+                android:text="완료"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/red_e1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/painTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:text="통증"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="#000000"
+                android:textSize="14dp" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                app:chipSpacingHorizontal="10dp"
+                app:chipSpacingVertical="10dp"
+                app:selectionRequired="false"
+                app:singleSelection="false">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/pain_pelvic"
+                    style="@style/CustomChipStyle_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:text="골반 통증"
+                    android:textSize="12dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:theme="@style/CustomChipStyle_red"
+                    android:textAppearance="@style/ChipText"
+                    app:ensureMinTouchTargetSize="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/pain_headache"
+                    style="@style/CustomChipStyle_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:text="두통"
+                    android:textAppearance="@style/ChipText"
+                    android:textSize="12dp"
+                    android:theme="@style/CustomChipStyle_red"
+                    app:ensureMinTouchTargetSize="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/pain_urinary_tract"
+                    style="@style/CustomChipStyle_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:text="배뇨통"
+                    android:textSize="12dp"
+                    android:textAppearance="@style/ChipText"
+                    android:theme="@style/CustomChipStyle_red"
+                    app:ensureMinTouchTargetSize="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/pain_ovulatory"
+                    style="@style/CustomChipStyle_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:text="배란통"
+                    android:textSize="12dp"
+                    android:textAppearance="@style/ChipText"
+                    android:theme="@style/CustomChipStyle_red"
+                    app:ensureMinTouchTargetSize="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/pain_Menstrual"
+                    style="@style/CustomChipStyle_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:text="월경통"
+                    android:textAppearance="@style/ChipText"
+                    android:textSize="12dp"
+                    android:theme="@style/CustomChipStyle_red"
+                    app:ensureMinTouchTargetSize="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/pain_Breast"
+                    style="@style/CustomChipStyle_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:text="유방 통증"
+                    android:textAppearance="@style/ChipText"
+                    android:textSize="12dp"
+                    android:theme="@style/CustomChipStyle_red"
+                    app:ensureMinTouchTargetSize="false" />
+
+            </com.google.android.material.chip.ChipGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/excretaTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:text="배변"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="#000000"
+                android:textSize="14dp" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipSpacingVertical="10dp"
+                app:selectionRequired="false"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/bowel_Constipation"
+                    style="@style/CustomChipStyle_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:text="변비"
+                    android:textAppearance="@style/ChipText"
+                    android:textSize="12dp"
+                    android:theme="@style/CustomChipStyle_red"
+                    app:ensureMinTouchTargetSize="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/bowel_Diarrhea"
+                    style="@style/CustomChipStyle_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:text="설사"
+                    android:textAppearance="@style/ChipText"
+                    android:textSize="12dp"
+                    android:theme="@style/CustomChipStyle_red"
+                    app:ensureMinTouchTargetSize="false" />
+            </com.google.android.material.chip.ChipGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/etcTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:text="기타"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="#000000"
+                android:textSize="14dp" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipSpacingVertical="10dp"
+                app:selectionRequired="false"
+                app:singleSelection="false">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/emotion"
+                    style="@style/CustomChipStyle_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:text="감정기복"
+                    android:textAppearance="@style/ChipText"
+                    android:textSize="12dp"
+                    android:theme="@style/CustomChipStyle_red"
+                    app:ensureMinTouchTargetSize="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/sexual"
+                    style="@style/CustomChipStyle_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:text="성욕 변화"
+                    android:textAppearance="@style/ChipText"
+                    android:textSize="12dp"
+                    android:theme="@style/CustomChipStyle_red"
+                    app:ensureMinTouchTargetSize="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/appetite"
+                    style="@style/CustomChipStyle_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:text="식욕 변화"
+                    android:textSize="12dp"
+                    android:textAppearance="@style/ChipText"
+                    android:theme="@style/CustomChipStyle_red"
+                    app:ensureMinTouchTargetSize="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/acne"
+                    style="@style/CustomChipStyle_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:text="여드름"
+                    android:textSize="12dp"
+                    android:textAppearance="@style/ChipText"
+                    android:theme="@style/CustomChipStyle_red"
+                    app:ensureMinTouchTargetSize="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/tiredness"
+                    style="@style/CustomChipStyle_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:text="피로감"
+                    android:textSize="12dp"
+                    android:textAppearance="@style/ChipText"
+                    android:theme="@style/CustomChipStyle_red"
+                    app:ensureMinTouchTargetSize="false" />
+
+            </com.google.android.material.chip.ChipGroup>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

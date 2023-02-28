@@ -1,0 +1,2666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".search.BrandDetailActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/btn_detail_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/btn_back"
+                app:layout_constraintBottom_toBottomOf="@+id/cl1"
+                app:layout_constraintStart_toStartOf="@+id/cl1"
+                app:layout_constraintTop_toTopOf="@+id/cl1" />
+
+            <TextView
+                android:id="@+id/page_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:text="컵 상세"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toBottomOf="@+id/cl1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cl1" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_brand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:includeFontPadding="false"
+                    android:lineHeight="22dp"
+                    android:text="크기별"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <HorizontalScrollView
+                    android:id="@+id/scv1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"
+                    android:scrollbars="none"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_brand">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+
+                        <!--                    루나컵 링-->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_lunacup_ring"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="2dp"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cl_lunacup_ring_tiny"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/search_boxborder_big"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/img_lunacup_ring_tiny"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="80dp"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="80dp"
+                                    android:background="@drawable/img_lunacup_ring_tiny"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageButton
+                                    android:id="@+id/btn_lunacup_ring_tiny_favorite"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:background="@drawable/btn_favorite_inactive"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_lunacup_ring_tiny"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="109dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginEnd="109dp"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:lineHeight="16dp"
+                                    android:text="타이니"
+                                    android:textColor="@color/black"
+                                    android:textSize="14dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/img_lunacup_ring_tiny" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/tag_lunacup_ring_tiny"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="30dp"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:layout_marginBottom="40dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/tv_lunacup_ring_tiny">
+
+                                    <LinearLayout
+                                        android:id="@+id/l_luna_ring_t1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/lunacup_ring_tiny_amount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="용량 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/lunacup_ring_tiny_amount2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="15ml"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_luna_ring_t2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_luna_ring_t1"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/lunacup_ring_tiny_diameter"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="지름 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/lunacup_ring_tiny_diameter2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="38mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_luna_ring_t3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_luna_ring_t2"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/lunacup_ring_tiny_length"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="총 길이 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/lunacup_ring_tiny_length2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="58mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cl_lunacup_ring_small"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="266dp"
+                                android:background="@drawable/search_boxborder_big"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/img_lunacup_ring_small"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="80dp"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="80dp"
+                                    android:background="@drawable/img_lunacup_ring_small"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageButton
+                                    android:id="@+id/btn_lunacup_ring_small_favorite"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:background="@drawable/btn_favorite_inactive"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_lunacup_ring_small"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="109dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginEnd="109dp"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:lineHeight="16dp"
+                                    android:text="스몰"
+                                    android:textColor="@color/black"
+                                    android:textSize="14dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/img_lunacup_ring_small" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/tag_lunacup_ring_small"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="30dp"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:layout_marginBottom="40dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/tv_lunacup_ring_small">
+
+                                    <LinearLayout
+                                        android:id="@+id/l_luna_ring_s1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/lunacup_ring_small_amount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="용량 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/lunacup_ring_small_amount2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="20ml"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_luna_ring_s2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_luna_ring_s1"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/lunacup_ring_small_diameter"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="지름 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/lunacup_ring_small_diameter2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="42mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_luna_ring_s3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_luna_ring_s2"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/lunacup_ring_small_length"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="총 길이 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/lunacup_ring_small_length2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="64mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cl_lunacup_ring_large"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="266dp"
+                                android:background="@drawable/search_boxborder_big"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="@+id/cl_lunacup_ring_small"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/img_lunacup_ring_large"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="80dp"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="80dp"
+                                    android:background="@drawable/img_lunacup_ring_large"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageButton
+                                    android:id="@+id/btn_lunacup_ring_large_favorite"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:background="@drawable/btn_favorite_inactive"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_lunacup_ring_large"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="109dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginEnd="109dp"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:lineHeight="16dp"
+                                    android:text="라지"
+                                    android:textColor="@color/black"
+                                    android:textSize="14dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/img_lunacup_ring_large" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/tag_lunacup_ring_large"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="30dp"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:layout_marginBottom="40dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/tv_lunacup_ring_large">
+
+                                    <LinearLayout
+                                        android:id="@+id/l_luna_ring_l1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/lunacup_ring_large_amount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="용량 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/lunacup_ring_large_amount2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="25ml"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_luna_ring_l2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_luna_ring_l1"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/lunacup_ring_large_diameter"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="지름 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/lunacup_ring_large_diameter2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="46mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_luna_ring_l3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_luna_ring_l2"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/lunacup_ring_large_length"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="총 길이 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/lunacup_ring_large_length2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="68mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!--                    루나컵 쇼티-->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_lunacup_shorty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="2dp"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cl_lunacup_shorty_tiny"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/search_boxborder_big"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/img_lunacup_shorty_tiny"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="80dp"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="80dp"
+                                    android:background="@drawable/img_lunacup_shorty_tiny"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageButton
+                                    android:id="@+id/btn_lunacup_shorty_tiny_favorite"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:background="@drawable/btn_favorite_inactive"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_lunacup_shorty_tiny"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="109dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginEnd="109dp"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:lineHeight="16dp"
+                                    android:text="타이니"
+                                    android:textColor="@color/black"
+                                    android:textSize="14dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/img_lunacup_shorty_tiny" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/tag_lunacup_shorty_tiny"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="30dp"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:layout_marginBottom="40dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/tv_lunacup_shorty_tiny">
+
+                                    <LinearLayout
+                                        android:id="@+id/l_luna_shorty_t1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/lunacup_shorty_tiny_amount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="용량 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/lunacup_shorty_tiny_amount2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="15ml"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_luna_shorty_t2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_luna_shorty_t1"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/lunacup_shorty_tiny_diameter"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="지름 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/lunacup_shorty_tiny_diameter2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="38mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_luna_shorty_t3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_luna_shorty_t2"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/lunacup_shorty_tiny_length"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="총 길이 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/lunacup_shorty_tiny_length2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="55mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cl_lunacup_shorty_small"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="266dp"
+                                android:background="@drawable/search_boxborder_big"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/img_lunacup_shorty_small"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="80dp"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="80dp"
+                                    android:background="@drawable/img_lunacup_shorty_small"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageButton
+                                    android:id="@+id/btn_lunacup_shorty_small_favorite"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:background="@drawable/btn_favorite_inactive"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_lunacup_shorty_small"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="109dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginEnd="109dp"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:lineHeight="16dp"
+                                    android:text="스몰"
+                                    android:textColor="@color/black"
+                                    android:textSize="14dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/img_lunacup_shorty_small" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/tag_lunacup_shorty_small"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="30dp"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:layout_marginBottom="40dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/tv_lunacup_shorty_small">
+
+                                    <LinearLayout
+                                        android:id="@+id/l_luna_shorty_s1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/lunacup_shorty_small_amount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="용량 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/lunacup_shorty_small_amount2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="20ml"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_luna_shorty_s2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_luna_shorty_s1"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/lunacup_shorty_small_diameter"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="지름 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/lunacup_shorty_small_diameter2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="42mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_luna_shorty_s3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_luna_shorty_s2"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/lunacup_shorty_small_length"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="총 길이 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/lunacup_shorty_small_length2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="59mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cl_lunacup_shorty_large"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="266dp"
+                                android:background="@drawable/search_boxborder_big"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="@+id/cl_lunacup_shorty_small"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/img_lunacup_shorty_large"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="80dp"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="80dp"
+                                    android:background="@drawable/img_lunacup_shorty_large"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageButton
+                                    android:id="@+id/btn_lunacup_shorty_large_favorite"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:background="@drawable/btn_favorite_inactive"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_lunacup_shorty_large"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="109dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginEnd="109dp"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:lineHeight="16dp"
+                                    android:text="라지"
+                                    android:textColor="@color/black"
+                                    android:textSize="14dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/img_lunacup_shorty_large" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/tag_lunacup_shorty_large"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="30dp"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:layout_marginBottom="40dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/tv_lunacup_shorty_large">
+
+                                    <LinearLayout
+                                        android:id="@+id/l_luna_shorty_l1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/lunacup_shorty_large_amount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="용량 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/lunacup_shorty_large_amount2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="25ml"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_luna_shorty_l2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_luna_shorty_l1"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/lunacup_shorty_large_diameter"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="지름 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/lunacup_shorty_large_diameter2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="46mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_luna_shorty_l3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_luna_shorty_l2"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/lunacup_shorty_large_length"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="총 길이 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/lunacup_shorty_large_length2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="64mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!--                    루나컵 클래식-->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_lunacup_classic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="2dp"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cl_lunacup_classic_small"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/search_boxborder_big"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/img_lunacup_classic_small"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="80dp"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="80dp"
+                                    android:background="@drawable/img_lunacup_classic_small"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageButton
+                                    android:id="@+id/btn_lunacup_classic_small_favorite"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:background="@drawable/btn_favorite_inactive"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_lunacup_classic_small"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="109dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginEnd="109dp"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:lineHeight="16dp"
+                                    android:text="스몰"
+                                    android:textColor="@color/black"
+                                    android:textSize="14dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/img_lunacup_classic_small" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/tag_lunacup_classic_small"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="30dp"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:layout_marginBottom="40dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/tv_lunacup_classic_small">
+
+                                    <LinearLayout
+                                        android:id="@+id/l_luna_classic_s1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/lunacup_classic_small_amount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="용량 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/lunacup_classic_small_amount2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="20ml"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_luna_classic_s2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_luna_classic_s1"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/lunacup_classic_small_diameter"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="지름 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/lunacup_classic_small_diameter2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="42mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_luna_classic_s3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_luna_classic_s2"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/lunacup_classic_small_length"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="총 길이 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/lunacup_classic_small_length2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="70mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cl_lunacup_classic_large"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="266dp"
+                                android:background="@drawable/search_boxborder_big"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/img_lunacup_classic_large"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="80dp"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="80dp"
+                                    android:background="@drawable/img_lunacup_classic_large"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageButton
+                                    android:id="@+id/btn_lunacup_classic_large_favorite"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:background="@drawable/btn_favorite_inactive"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_lunacup_classic_large"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="109dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginEnd="109dp"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:lineHeight="16dp"
+                                    android:text="라지"
+                                    android:textColor="@color/black"
+                                    android:textSize="14dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/img_lunacup_classic_large" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/tag_lunacup_classic_large"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="30dp"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:layout_marginBottom="40dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/tv_lunacup_classic_large">
+
+                                    <LinearLayout
+                                        android:id="@+id/l_luna_classic_l1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/lunacup_classic_large_amount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="용량 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/lunacup_classic_large_amount2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="25ml"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_luna_classic_l2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_luna_classic_l1"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/lunacup_classic_large_diameter"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="지름 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/lunacup_classic_large_diameter2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="46mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_luna_classic_l3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_luna_classic_l2"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/lunacup_classic_large_length"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="총 길이 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/lunacup_classic_large_length2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="76mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!--                    한나컵-->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_hannahcup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="2dp"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cl_hannahcup_extrasmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/search_boxborder_big"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/img_hannahcup_extrasmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="80dp"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="80dp"
+                                    android:background="@drawable/img_hannahcup_extrasmall"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageButton
+                                    android:id="@+id/btn_hannahcup_extrasmall_favorite"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:background="@drawable/btn_favorite_inactive"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_hannahcup_extrasmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="0dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginEnd="0dp"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:lineHeight="16dp"
+                                    android:text="엑스트라 스몰"
+                                    android:textColor="@color/black"
+                                    android:textSize="14dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/img_hannahcup_extrasmall" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/tag_hannahcup_extrasmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="0dp"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginEnd="0dp"
+                                    android:layout_marginBottom="40dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/tv_hannahcup_extrasmall">
+
+                                    <LinearLayout
+                                        android:id="@+id/l_hannah_xs1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/hannah_extrasmall_amount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="용량 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/hannah_extrasmall_amount2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="16ml"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_hannah_xs2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_hannah_xs1"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/hannah_extrasmall_diameter"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="지름 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/hannah_extrasmall_diameter2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="36.8mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_hannah_xs3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_hannah_xs2"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/hannah_extrasmall_length"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="총 길이 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/hannah_extrasmall_length2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="64mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cl_hannahcup_small"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="266dp"
+                                android:background="@drawable/search_boxborder_big"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/img_hannahcup_small"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="80dp"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="80dp"
+                                    android:background="@drawable/img_hannahcup_small"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageButton
+                                    android:id="@+id/btn_hannahcup_small_favorite"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:background="@drawable/btn_favorite_inactive"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_hannahcup_small"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="109dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginEnd="109dp"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:lineHeight="16dp"
+                                    android:text="스몰"
+                                    android:textColor="@color/black"
+                                    android:textSize="14dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/img_hannahcup_small" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/tag_hannahcup_small"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="30dp"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:layout_marginBottom="40dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/tv_hannahcup_small">
+
+
+                                    <LinearLayout
+                                        android:id="@+id/l_hannah_s1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/hannah_small_amount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="용량 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/hannah_small_amount2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="23ml"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_hannah_s2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_hannah_s1"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/hannah_small_diameter"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="지름 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/hannah_small_diameter2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="40mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_hannah_s3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_hannah_s2"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/hannah_small_length"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="총 길이 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/hannah_small_length2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="66mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cl_hannahcup_medium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="266dp"
+                                android:background="@drawable/search_boxborder_big"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="@+id/cl_hannahcup_small"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/img_hannahcup_medium"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="80dp"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="80dp"
+                                    android:background="@drawable/img_hannahcup_medium"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageButton
+                                    android:id="@+id/btn_hannahcup_medium_favorite"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:background="@drawable/btn_favorite_inactive"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_hannahcup_medium"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="109dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginEnd="109dp"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:lineHeight="16dp"
+                                    android:text="미디움"
+                                    android:textColor="@color/black"
+                                    android:textSize="14dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/img_hannahcup_medium" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/tag_hannahcup_medium"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="30dp"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:layout_marginBottom="40dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/tv_hannahcup_medium">
+
+                                    <LinearLayout
+                                        android:id="@+id/l_hannah_m1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/hannah_medium_amount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="용량 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/hannah_medium_amount2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="30ml"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_hannah_m2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_hannah_m1"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/hannah_medium_diameter"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="지름 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/hannah_medium_diameter2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="44mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_hannah_m3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_hannah_m2"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/hannah_medium_length"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="총 길이 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/hannah_medium_length2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="71mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <!--                    이브컵-->
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_evecup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="2dp"
+                            android:visibility="gone"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cl_evecup_mini"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/search_boxborder_big"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/img_evecup_mini"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="73dp"
+                                    android:layout_marginTop="48dp"
+                                    android:layout_marginEnd="72dp"
+                                    android:src="@drawable/img_evecup"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageButton
+                                    android:id="@+id/btn_evecup_mini_favorite"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:background="@drawable/btn_favorite_inactive"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_evecup_mini"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="109dp"
+                                    android:layout_marginTop="31dp"
+                                    android:layout_marginEnd="109dp"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:lineHeight="16dp"
+                                    android:text="미니"
+                                    android:textColor="@color/black"
+                                    android:textSize="14dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/img_evecup_mini" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/tag_evecup_mini"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="30dp"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:layout_marginBottom="40dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/tv_evecup_mini">
+
+                                    <LinearLayout
+                                        android:id="@+id/l_eve_m1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/eve_mini_amount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="용량 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/eve_mini_amount2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="20ml"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_eve_m2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_eve_m1"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/eve_mini_diameter"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="지름 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/eve_mini_diameter2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="42mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_eve_m3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_eve_m2"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/eve_mini_length"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="총 길이 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/eve_mini_length2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="60mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cl_evecup_small"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="266dp"
+                                android:background="@drawable/search_boxborder_big"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/img_evecup_small"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="73dp"
+                                    android:layout_marginTop="48dp"
+                                    android:layout_marginEnd="72dp"
+                                    android:src="@drawable/img_evecup"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageButton
+                                    android:id="@+id/btn_evecup_small_favorite"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:background="@drawable/btn_favorite_inactive"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_evecup_small"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="109dp"
+                                    android:layout_marginTop="31dp"
+                                    android:layout_marginEnd="109dp"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:lineHeight="16dp"
+                                    android:text="스몰"
+                                    android:textColor="@color/black"
+                                    android:textSize="14dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/img_evecup_small" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/tag_evecup_small"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="30dp"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:layout_marginBottom="40dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/tv_evecup_small">
+
+
+                                    <LinearLayout
+                                        android:id="@+id/l_eve_s1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/eve_small_amount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="용량 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/eve_small_amount2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="25ml"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_eve_s2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_eve_s1"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/eve_small_diameter"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="지름 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/eve_small_diameter2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="42mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_eve_s3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_eve_s2"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/eve_small_length"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="총 길이 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/eve_small_length2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="70mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cl_evecup_large"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="266dp"
+                                android:background="@drawable/search_boxborder_big"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="@+id/cl_evecup_small"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/img_evecup_large"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="73dp"
+                                    android:layout_marginTop="48dp"
+                                    android:layout_marginEnd="72dp"
+                                    android:src="@drawable/img_evecup"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageButton
+                                    android:id="@+id/btn_evecup_large_favorite"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="32dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:background="@drawable/btn_favorite_inactive"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_evecup_large"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="109dp"
+                                    android:layout_marginTop="31dp"
+                                    android:layout_marginEnd="109dp"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:lineHeight="16dp"
+                                    android:text="라지"
+                                    android:textColor="@color/black"
+                                    android:textSize="14dp"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/img_evecup_large" />
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/tag_evecup_large"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="30dp"
+                                    android:layout_marginTop="16dp"
+                                    android:layout_marginEnd="30dp"
+                                    android:layout_marginBottom="40dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/tv_evecup_large">
+
+                                    <LinearLayout
+                                        android:id="@+id/l_eve_l1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/eve_large_amount"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="용량 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/eve_large_amount2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="30ml"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_eve_l2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_eve_l1"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/eve_large_diameter"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="지름 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/eve_large_diameter2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="45.5mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/l_eve_l3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="8dp"
+                                        android:background="@drawable/border_gray_a7_line_round_24"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/l_eve_l2"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintBottom_toBottomOf="parent">
+
+                                        <TextView
+                                            android:id="@+id/eve_large_length"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingStart="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="총 길이 "
+                                            android:textColor="@color/gray_a7"
+                                            android:textSize="10dp" />
+
+                                        <TextView
+                                            android:id="@+id/eve_large_length2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:fontFamily="@font/roboto_regular"
+                                            android:lineHeight="16dp"
+                                            android:paddingEnd="8dp"
+                                            android:paddingVertical="2dp"
+                                            android:text="70mm"
+                                            android:textColor="@color/black_32"
+                                            android:textSize="10dp" />
+                                    </LinearLayout>
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:id="@+id/tv_brand_review"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="14dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:lineHeight="22dp"
+                    android:text="후기로 찾는 마이컵"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/scv1" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_brand_review_option2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_brand_review"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_brand_review" >
+
+                    <ImageButton
+                        android:id="@+id/btn_brand_review_option2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_align_down"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_brand_review_option2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_medium"
+                        android:lineHeight="16dp"
+                        android:text="질 길이"
+                        android:textColor="@color/gray_66"
+                        android:textSize="12dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/btn_brand_review_option2"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_brand_review_option2"
+                        app:layout_constraintTop_toTopOf="@+id/btn_brand_review_option2" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_brand_review_option1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_brand_review"
+                    app:layout_constraintEnd_toStartOf="@+id/cl_brand_review_option2"
+                    app:layout_constraintTop_toTopOf="@+id/tv_brand_review" >
+
+                    <ImageButton
+                        android:id="@+id/btn_brand_review_option1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_align_down"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_brand_review_option1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_medium"
+                        android:lineHeight="16dp"
+                        android:text="사이즈"
+                        android:textColor="@color/gray_66"
+                        android:textSize="12dp"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_brand_review_option1"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_brand_review"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="4dp"
+                    android:orientation="vertical"
+                    android:overScrollMode="never"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_brand_review"
+                    tools:listitem="@layout/item_review" />
+
+                <TextView
+                    android:id="@+id/tv_branddetail_default"
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="138dp"
+                    android:layout_marginBottom="218dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:text="아직 후기가 존재하지 않습니다.\n나만의 월경컵 사용 후기를 공유해 주세요!"
+                    android:textColor="@color/gray_c5"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_brand_review" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/btn_add_review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="40dp"
+            android:clickable="true"
+            android:text="후기 작성하기"
+            android:textColor="@color/white"
+            android:fontFamily="@font/roboto_medium"
+            android:textSize="12dp"
+            android:lineHeight="16dp"
+            app:backgroundTint="#e16248"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:icon="@drawable/ic_add_review"
+            app:iconTint="@color/white"
+            app:tint="@null" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

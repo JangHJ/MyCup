@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/month_popup"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:background="@drawable/month_calendar_popup"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingTop="40dp"
+    android:paddingRight="16dp"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/date_textview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto_medium"
+            android:text="7월 13일 수요일"
+            android:textColor="@color/gray_a7"
+            android:textSize="14dp"
+            android:gravity="center_vertical"/>
+
+        <FrameLayout
+            android:id="@+id/chip"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:background="@drawable/record_month_chip_bg">
+
+            <TextView
+                android:id="@+id/dayCount_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center"
+                android:text="월경 3일 전"
+                android:textColor="@color/white"
+                android:textSize="12dp"
+                android:paddingHorizontal="12dp"/>
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/record_textview1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="기록이 존재하지 않습니다."
+            android:textColor="@color/gray_c5"
+            android:textSize="12dp" />
+        <TextView
+            android:id="@+id/record_textview2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text=""
+            android:textColor="@color/gray_c5"
+            android:textSize="12dp" />
+        <TextView
+            android:id="@+id/record_textview3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text=""
+            android:textColor="@color/gray_c5"
+            android:textSize="12dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

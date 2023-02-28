@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/month_popup"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_bg"
+    android:orientation="vertical"
+    android:paddingTop="32dp"
+    android:paddingLeft="24dp"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto_bold"
+            android:text="교체 시간"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/save_button_datepicker"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/chipBackgroundColor_unclicked"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="right|center_vertical"
+            android:paddingLeft="30dp"
+            android:paddingRight="16dp"
+            android:text="완료"
+            android:textColor="@color/red_e1"
+            android:textSize="12dp" />
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/timepicker"
+        layout="@layout/picker_timepick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:theme="@style/CustomPicker"/>
+
+</LinearLayout>

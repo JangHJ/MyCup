@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".info.UseActivity">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/img_use"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@drawable/img_use"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+                <ImageView
+                    android:id="@+id/img_use"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_use"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:background="#80000000"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/btn_use_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/btn_back"
+                    android:backgroundTint="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/title_measure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="24dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:includeFontPadding="false"
+                    android:lineHeight="16dp"
+                    android:text="월경컵 사용법"
+                    android:textColor="@color/white"
+                    android:textSize="24dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_use"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="48dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:includeFontPadding="false"
+                    android:lineHeight="16dp"
+                    android:text="월경컵의 유통 기한"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/title_measure" />
+
+                <TextView
+                    android:id="@+id/tv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginBottom="2dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:includeFontPadding="false"
+                    android:lineHeight="18dp"
+                    android:text="| 루나컵 e-가이드북"
+                    android:textColor="@color/gray_66"
+                    android:textSize="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv2"
+                    app:layout_constraintStart_toEndOf="@+id/tv2" />
+
+                <TextView
+                    android:id="@+id/tv4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="194dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:includeFontPadding="false"
+                    android:lineHeight="20dp"
+                    android:text="@string/use_content1"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:justificationMode="inter_word"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
+                <TextView
+                    android:id="@+id/tv5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="48dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:includeFontPadding="false"
+                    android:lineHeight="16dp"
+                    android:text="착용 방법"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv4" />
+
+                <TextView
+                    android:id="@+id/tv6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginBottom="2dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:includeFontPadding="false"
+                    android:lineHeight="18dp"
+                    android:text="| 루나컵 e-가이드북"
+                    android:textColor="@color/gray_66"
+                    android:textSize="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv5"
+                    app:layout_constraintStart_toEndOf="@+id/tv5" />
+
+
+                <TextView
+                    android:id="@+id/tv7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:includeFontPadding="false"
+                    android:lineHeight="20dp"
+                    android:text = "1) 소독을 마친 월경컵을 준비한 뒤 \n
+    비누를 사용하여 손을 깨끗이 씻어주세요.\n\n
+2) 온몸에 긴장을 풀고 변기에 등을 뒤로 기울이듯이\n
+     앉아 시도하거나 한 다리만 변기에 올려놓고\n
+     시도하는 등 다양한 자세를 시도하여 편안한\n
+     자세를 찾아주세요.\n\n
+3) 월경컵의 가운데를 중심으로 접어 C 모양을 만드는 \n
+      C 폴드, 입구의 한 부분을 꾹 눌러 월경컵 안쪽으로\n
+      들어가게끔 접는 펀치다운 등의 방법으로 월경컵을 \n
+      접어 단단히 잡고 질 안으로 넣어줍니다.\n
+      질 안에 완전히 넣어 포궁 경부까지 부드럽게 \n
+      밀어준 후 월경컵을 놓으면 펼쳐집니다.\n\n
+4) 월경컵 밑 부분을 만졌을 때 굴곡이 없으며 \n
+      월경컵의 꼬리를 잡아당겼을 때 빠지지 않고 \n
+      버티는 힘이 느껴진다면 실링이 잘 된 것입니다. \n
+      월경컵이 잘 펴지지 않았을 경우 월경컵의 밑 부분을 \n
+      조금씩 눌러주거나 위아래로 움직여주면 \n
+      월경컵이 굴곡 없이 펼쳐지게 됩니다."
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:textAlignment="textStart"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv6" />
+
+                <TextView
+                    android:id="@+id/tv8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="24dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:includeFontPadding="false"
+                    android:lineHeight="20dp"
+                    android:text="@string/use_content3"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:justificationMode="inter_word"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv7" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

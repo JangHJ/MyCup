@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/border_white_fill_round_16">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:id="@+id/timeRange"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:fontFamily="@font/roboto_medium"
+            android:textSize="14dp"
+            android:textColor="#000000"
+            tools:text="14시 30분 - 18시 12분"/>
+
+
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="20dp"
+            app:chipSpacingVertical="6dp"
+            app:chipSpacingHorizontal="4dp">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/time"
+                android:theme="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:enabled="false"
+                android:text="3시간"
+                app:chipStrokeWidth="0.5dp"
+                android:textColor="@color/gray_a7"
+                android:textSize="12dp"
+                android:textAppearance="@style/ChipText"
+                app:ensureMinTouchTargetSize="false"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/amount"
+                android:theme="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:enabled="false"
+                android:text="7ml"
+                android:textColor="@color/white"
+                android:textSize="12dp"
+                android:textAppearance="@style/ChipText"
+                app:ensureMinTouchTargetSize="false" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/type"
+                android:theme="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:enabled="false"
+                android:text="탐폰"
+                android:textColor="@color/white"
+                android:textSize="12dp"
+                android:textAppearance="@style/ChipText"
+                app:ensureMinTouchTargetSize="false"/>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/color"
+                android:theme="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:enabled="false"
+                android:text="선분홍색"
+                android:textColor="@color/white"
+                android:textSize="12dp"
+                android:textAppearance="@style/ChipText"
+                app:ensureMinTouchTargetSize="false"/>
+        </com.google.android.material.chip.ChipGroup>
+
+
+        </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

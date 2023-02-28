@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".info.InfoFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="66.3dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:includeFontPadding="false"
+                    android:lineHeight="16dp"
+                    android:text="정보톡톡"
+                    android:textColor="@color/black"
+                    android:textSize="24dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/img_measure"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_measure"
+                    app:layout_constraintTop_toBottomOf="@+id/title_info"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_info1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="12.3dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:includeFontPadding="false"
+                    android:lineHeight="16dp"
+                    android:text="잠깐! 월경컵 입문 전에"
+                    android:textColor="@color/gray_a7"
+                    android:textSize="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/img_measure"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_info2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:includeFontPadding="false"
+                    android:lineHeight="16dp"
+                    android:text="질 길이 측정 방법"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_info1"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/img_use"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_use"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_info2"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_info3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="12.3dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:includeFontPadding="false"
+                    android:lineHeight="16dp"
+                    android:text="컵에 대한 모든 것"
+                    android:textColor="@color/gray_a7"
+                    android:textSize="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/img_use"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_info4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:includeFontPadding="false"
+                    android:lineHeight="16dp"
+                    android:text="월경컵 사용법"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_info3"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+
+                <ImageView
+                    android:id="@+id/img_change"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_change"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_info4"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_info5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="12.3dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:includeFontPadding="false"
+                    android:lineHeight="16dp"
+                    android:text="컵에 대한 모든 것"
+                    android:textColor="@color/gray_a7"
+                    android:textSize="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/img_change"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_info6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:includeFontPadding="false"
+                    android:lineHeight="16dp"
+                    android:text="월경컵 교체법"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_info5"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+
+                <ImageView
+                    android:id="@+id/img_manage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_maintain"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_info6"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_info7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="12.3dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:includeFontPadding="false"
+                    android:lineHeight="16dp"
+                    android:text="컵에 대한 모든 것"
+                    android:textColor="@color/gray_a7"
+                    android:textSize="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/img_manage"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_info8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:includeFontPadding="false"
+                    android:lineHeight="16dp"
+                    android:text="월경컵 관리법"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_info7"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+
+                <ImageView
+                    android:id="@+id/img_talk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_talk"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_info8"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_info9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="12.3dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:includeFontPadding="false"
+                    android:lineHeight="16dp"
+                    android:text="알고 계셨나요"
+                    android:textColor="@color/gray_a7"
+                    android:textSize="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/img_talk"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tv_info10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginBottom="24dp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:includeFontPadding="false"
+                    android:lineHeight="20dp"
+                    android:text="월경? 포궁? 질 주름?\n언어에 반영되는 성 고정관념"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_info9"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

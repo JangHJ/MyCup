@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.yours.mycup">
+
+    <uses-permission
+        android:name="android.permission.INTERNET" />
+
+<!--    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>-->
+
+
+    <application
+        android:requestLegacyExternalStorage="true"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_mycup"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_mycup_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyCup">
+        <activity android:name="com.yours.mycup.init.SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.yours.mycup.search.ByLengthActivity" />
+        <activity android:name="com.yours.mycup.info.TalkActivity" />
+        <activity android:name="com.yours.mycup.info.ManageActivity" />
+        <activity android:name="com.yours.mycup.info.UseActivity" />
+        <activity android:name="com.yours.mycup.info.ChangeActivity" />
+        <activity android:name="com.yours.mycup.info.MeasureActivity" />
+        <activity android:name="com.yours.mycup.mypage.MyInterestActivity" />
+        <activity android:name="com.yours.mycup.mypage.MyReviewActivity" />
+        <activity android:name="com.yours.mycup.record.MenstruationSettingActivity" />
+        <activity android:name="com.yours.mycup.record.MonthCalendarActivity" />
+        <activity android:name="com.yours.mycup.record.SymptomSettingActivity" />
+        <activity android:name="com.yours.mycup.record.DischargeSettingActivity" />
+        <activity android:name="com.yours.mycup.record.MenstruationActivity" />
+        <activity android:name="com.yours.mycup.search.AddReviewActivity" />
+        <activity android:name="com.yours.mycup.search.BrandDetailActivity" />
+        <activity android:name="com.yours.mycup.search.BrandActivity" />
+        <activity android:name="com.yours.mycup.search.SituationActivity" />
+        <activity android:name="com.yours.mycup.mypage.MyAppSettingActivity" />
+        <activity android:name="com.yours.mycup.mypage.MyAmountActivity" />
+        <activity android:name="com.yours.mycup.mypage.MyLengthActivity" />
+        <activity android:name="com.yours.mycup.init.InitActivity" />
+        <activity android:name="com.yours.mycup.MainActivity" />
+        <activity android:name="com.yours.mycup.init.InitActivity2" />
+        <activity android:name="com.yours.mycup.init.LoginActivity" />
+    </application>
+
+</manifest>

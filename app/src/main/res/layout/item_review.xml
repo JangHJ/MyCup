@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:background="@drawable/border_gray_f9_fill_round_16"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/item_review_cupname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/roboto_medium"
+        android:lineHeight="16dp"
+        android:text="루나컵 쇼티"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/item_review_userinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/roboto_regular"
+        android:lineHeight="16dp"
+        android:text="60mm • 90ml • 3개월 이상 사용"
+        android:textColor="@color/red_e1"
+        android:textSize="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/item_review_cupname"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/item_review_userinfo"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/item_review_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/item_review_userinfo">
+
+            <TextView
+                android:id="@+id/item_review_feeling"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_gray_a7_line_round_24"
+                android:fontFamily="@font/roboto_regular"
+                android:lineHeight="16dp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:text="느낌"
+                android:textColor="@color/black_32"
+                android:textSize="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/item_review_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/border_gray_a7_line_round_24"
+                android:fontFamily="@font/roboto_regular"
+                android:lineHeight="16dp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:text="길이"
+                android:textColor="@color/black_32"
+                android:textSize="12dp"
+                app:layout_constraintStart_toEndOf="@+id/item_review_feeling"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/item_review_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/border_gray_a7_line_round_24"
+                android:fontFamily="@font/roboto_regular"
+                android:lineHeight="16dp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:text="사이즈"
+                android:textColor="@color/black_32"
+                android:textSize="12dp"
+                app:layout_constraintStart_toEndOf="@+id/item_review_length"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/item_review_hardness"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/border_gray_a7_line_round_24"
+                android:fontFamily="@font/roboto_regular"
+                android:lineHeight="16dp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:text="경도"
+                android:textColor="@color/black_32"
+                android:textSize="12dp"
+                app:layout_constraintStart_toEndOf="@+id/item_review_size"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

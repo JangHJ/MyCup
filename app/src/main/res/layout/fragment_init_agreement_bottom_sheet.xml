@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/month_popup"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@drawable/bottom_sheet_bg"
+    android:orientation="vertical"
+    android:paddingTop="32dp"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="서비스 약관 동의"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:layout_marginLeft="24dp"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="32dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:theme="@style/CustomCheckBox" />
+
+        <TextView
+            android:id="@+id/agreeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="개인정보 처리방침"
+            android:textColor="@color/red_e1"
+            android:textSize="14dp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/record_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="에 동의"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/nextBtn"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="다음"
+        android:gravity="center"
+        android:fontFamily="@font/roboto_medium"
+        android:textSize="14dp"
+        android:textColor="@color/white"
+        android:background="@drawable/init_agree_button_next"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="20dp">
+
+
+    </Button>
+
+</LinearLayout>
