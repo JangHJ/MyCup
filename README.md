@@ -1,1 +1,1 @@
-# MyCup_Heejeong
+# 생리주기 어플 MyCup
