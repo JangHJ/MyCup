@@ -123,10 +123,385 @@ private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
     ```
     <br>
      
-- 월경 기록 저장
-  
-  ```kotlin
-  ```
+  - 월경 기록(분비물, 월경, 증상) 저장
+      [https://github.com/JangHJ/MyCup/blob/main/app/src/main/java/com/yours/mycup/record/DischargeSettingActivity.kt]
+      ```kotlin
+          //분비물 저장
+          binding.save.setOnClickListener {
+            val docRef = db.collection("${auth.currentUser?.email}").document("Record")
+            docRef.get().addOnSuccessListener { document ->
+                val date = document.get("clicked_date")
+                var nang :String ?= null
+                var touch :String ?= null
+        
+                //냉 분비량 추가
+                if (binding.veryLittle.isChecked == true) {
+                    nang = "${binding.veryLittle.text}" // 아주 적음
+                } else if (binding.little.isChecked == true) {
+                    nang = "${binding.little.text}" // 적음
+                } else if (binding.normal.isChecked == true) {
+                    nang = "${binding.normal.text}" // 보통
+                } else if (binding.much.isChecked == true) {
+                    nang = "${binding.much.text}" // 많음
+                } else if (binding.veryMuch.isChecked == true) {
+                    nang = "${binding.veryMuch.text}" // 아주많음
+                } else {
+                    Log.e("오류!", "냉분비량 칩선택이 실패하였습니다.")
+                }
+        
+                //촉감 추가
+                if (binding.sticky.isChecked == true) {
+                    touch = "${binding.sticky.text}" // 끈적하고 점도가 높다
+                } else if (binding.creamy.isChecked == true) {
+                    touch = "${binding.creamy.text}" // 크림 같다
+                } else if (binding.eggWhite.isChecked == true) {
+                    touch = "${binding.eggWhite.text}" // 계란 흰자같다
+                } else if (binding.watery.isChecked == true) {
+                    touch = "${binding.watery.text}" // 묽다
+                } else {
+                    Log.e("오류!", "촉감 칩선택이 실패하였습니다.")
+                }
+        
+                if(nang == null && touch == null)
+                {
+                    docRef.collection("$date")
+                        .document("Discharge").delete()
+                        .addOnSuccessListener {
+                            Log.d(
+                                ContentValues.TAG,
+                                "DocumentSnapshot successfully deleted!"
+                            )
+                        }
+                        .addOnFailureListener { e ->
+                            Log.w(
+                                ContentValues.TAG,
+                                "Error deleting document",
+                                e
+                            )
+                        }
+                }else{
+                    val data = hashMapOf(
+                        "nang" to nang,
+                        "touch" to touch,
+                        "isEnabled" to true
+                    )
+                    docRef.collection("$date").document("Discharge").set(data, SetOptions.merge())
+                }
+            }
+            Toast.makeText(applicationContext, "저장되었습니다", Toast.LENGTH_SHORT).show()
+            finish()
+        }
+      ```
+
+    [https://github.com/JangHJ/MyCup/blob/main/app/src/main/java/com/yours/mycup/record/MenstruationSettingActivity.kt]
+    
+    ```kotlin
+    //월경 상세정보 저장
+    binding.save.setOnClickListener {
+        val startTime = binding.startTimeToUseSupply.text.toString()
+        val endTime = binding.endTimeToUseSupply.text.toString()
+        val supply = binding.supplySpinner.text.toString()
+        var type: String = binding.supplySpinner.text.toString()
+        var amount = 0
+    
+        if (startTime == "" || endTime == "" || supply == "" || binding.expectaionValueTextView.text == "월경량 - ml") {
+            Toast.makeText(applicationContext, "시간, 월경용품을 모두 기록해주세요", Toast.LENGTH_SHORT).show()
+        }
+        else {
+         if (type == "생리대") {
+            Log.e("정혈 색상", "${binding.lightRed.text.toString()}")
+            type = binding.typePickerPad.text.toString()
+        } else if (type == "탐폰") {
+            Log.e("정혈 색상", "${binding.lightPink.text.toString()}")
+            type = binding.typePickerTampon.text.toString()
+        } else if (type == "월경컵") {
+            Log.e("정혈 색상", "${binding.darkPurple.text.toString()}")
+            type = binding.typeInputEdittext.text.toString()
+        } else {
+            Log.e("오류!", "칩선택이 실패하였습니다.")
+        }
+    
+        docRef.get().addOnSuccessListener { document ->
+            val date = "${document.get("clicked_date")}" //선택된 날짜 저장
+            val date2 = "${document.get("Today")}"
+    
+            Log.e("date : ", "$date")
+    
+            var color: String = ""
+    
+            if (binding.lightRed.isChecked == true) {
+                Log.e("정혈 색상", "${binding.lightRed.text}")
+                color = "${binding.lightRed.text}"
+            } else if (binding.lightPink.isChecked == true) {
+                Log.e("정혈 색상", "${binding.lightPink.text}")
+                color = "${binding.lightPink.text}"
+            } else if (binding.darkPurple.isChecked == true) {
+                Log.e("정혈 색상", "${binding.darkPurple.text}")
+                color = "${binding.darkPurple.text}"
+            } else if (binding.darkBrown.isChecked == true) {
+                Log.e("정혈 색상", "${binding.darkBrown.text}")
+                color = "${binding.darkBrown.text}"
+            } else {
+                Log.e("오류!", "칩선택이 실패하였습니다.")
+            }
+    
+            if (supply == "생리대") {
+                when (type) {
+                    "라이너" -> amount = 1
+                    "소형" -> amount = 3
+                    "중형" -> amount = 5
+                    "대형" -> amount = 7
+                    "오버나이트" -> amount = 10
+                }
+            } else if (supply == "탐폰") {
+                when (type) {
+                    "레귤러" -> amount = 4
+                    "슈퍼" -> amount = 8
+                }
+            } else if (supply == "월경컵") {
+                amount = "${binding.typeInputEdittext.text}".toInt()
+            }
+            Log.e("선택된 날짜 : ", "$date")
+    
+    
+            val docRef2 = docRef.collection("$date").document("Menstruation")
+            var null_cnt = 0
+            var arrnum = 1
+            var cnt2 = 1
+            var arr_end = false
+            if(document.get("arr_num") != null)
+                arrnum = "${document.get("arr_num")}".toInt()
+            else{
+                val data = hashMapOf(
+                    "arr_num" to 1
+                )
+                docRef.set(data, SetOptions.merge())
+            }
+    
+            if(document.get("null_cnt") != null)
+                null_cnt = "${document.get("null_cnt")}".toInt()
+    
+    
+            if(document.get("arr_end") != null)
+                arr_end = document.get("arr_end") as Boolean
+    
+            if (document.get("am_cnt") == null) {
+                val data = hashMapOf(
+                    "am_cnt" to 1
+                )
+                docRef.set(data, SetOptions.merge())
+            } else {
+                cnt2 = "${document.get("am_cnt")}".toInt() //am_cnt 값 cnt에 넣어줌
+            }
+    
+            docRef2.get().addOnSuccessListener { document ->  
+                var totalamount = 0
+                if(document.get("totalAmount") != null) {
+                    totalamount = "${document.get("totalAmount")}".toInt()
+                    val data = hashMapOf(
+                        "am_cnt" to cnt2 + 1
+                    )
+                }
+    
+                if (document.get("list_num") == null) {
+                    val data = hashMapOf(
+                        "list_num" to 1,
+                        "men_list1" to mapOf(
+                            "startTime" to startTime,
+                            "endTime" to endTime,
+                            "supply" to supply,
+                            "type" to type,
+                            "color" to color,
+                            "amount" to amount
+                        ),
+                        "isEnabled" to true,
+                        "totalAmount" to amount
+                    )
+                    docRef.collection("$date").document("Menstruation")
+                        .set(data, SetOptions.merge())
+    
+                    if(null_cnt < 4)
+                    {
+                        val data2 = hashMapOf(
+                            "null_cnt" to null_cnt-1
+                        )
+                        docRef.set(data2, SetOptions.merge())
+                        docRef.update("duration_arr$arrnum", FieldValue.arrayUnion("$date"))
+                        val data3 = hashMapOf(
+                            "amount_arr$arrnum" to mapOf(
+                                "$date" to totalamount + amount
+                            )
+                        )
+                        docRef.set(data3, SetOptions.merge())
+    
+                    }
+                    else{ //공백이 3일이상 넘어갔다는 의미
+                        arrnum += 1
+                        val data = hashMapOf(
+                            "arr_num" to arrnum,
+                            "null_cnt" to 0,
+                            "arr_end" to true // list1 배열 삽입과정이 끝남 -> 2로 넘어감
+                        )
+                        docRef.set(data, SetOptions.merge())
+                        docRef.update("duration_arr$arrnum", FieldValue.arrayUnion("$date"))
+    
+                        val data3 = hashMapOf(
+                            "amount_arr$arrnum" to mapOf(
+                                "$date" to totalamount + amount
+                            )
+                        )
+                        docRef.set(data3, SetOptions.merge())
+    
+                    }
+                } else {
+                    var temp = "${document.get("list_num")}"
+                    val num = temp.toInt() + 1
+    
+                    val data = hashMapOf(
+                        "men_list$num" to mapOf(
+                            "startTime" to startTime,
+                            "endTime" to endTime,
+                            "supply" to supply,
+                            "type" to type,
+                            "color" to color,
+                            "amount" to amount
+                        ),
+                        "list_num" to num,
+                        "isEnabled" to true,
+                        "totalAmount" to totalamount + amount
+                    )
+                    docRef.collection("$date").document("Menstruation")
+                        .set(data, SetOptions.merge())
+    
+                    val data3 = hashMapOf(
+                        "amount_arr$arrnum" to mapOf(
+                            "$date" to totalamount + amount
+                        )
+                    )
+                    docRef.set(data3, SetOptions.merge())
+                }
+                //var temp = "${document.get("list_num")}"
+                //var map: Map<String, Any> = document.get("men_list".plus(temp)) as Map<String, Any>
+                //val num = temp.toInt() + 1
+                }
+        }
+            Toast.makeText(applicationContext, "저장되었습니다", Toast.LENGTH_SHORT).show()
+            finish()
+        }
+    }
+    ```
+    
+    [https://github.com/JangHJ/MyCup/blob/main/app/src/main/java/com/yours/mycup/record/SymptomSettingActivity.kt]
+    
+    ```kotlin
+    //증상 저장
+    binding.save.setOnClickListener {
+        docRef.get().addOnSuccessListener { document ->
+            val date = document.get("clicked_date")
+            var pain = arrayOfNulls<Any>(6)
+            var bowel: String? = null
+            var etc = arrayOfNulls<Any>(5)
+            var cnt_p = 0
+            var cnt_b = 0
+            var cnt_e = 0
+    
+            //통증 추가
+            if (binding.painPelvic.isChecked == true) {
+                pain[0] = "${binding.painPelvic.text}" // 골반 통증
+                cnt_p++
+            }
+    
+            if (binding.painHeadache.isChecked == true) {
+                pain[1] = "${binding.painHeadache.text}" // 두통
+                cnt_p++
+            }
+    
+            if (binding.painUrinaryTract.isChecked == true) {
+                pain[2] = "${binding.painUrinaryTract.text}" // 배뇨통
+                cnt_p++
+            }
+    
+            if (binding.painOvulatory.isChecked == true) {
+                pain[3] = "${binding.painOvulatory.text}" // 배란통
+                cnt_p++
+            }
+    
+            if (binding.painMenstrual.isChecked == true) {
+                pain[4] = "${binding.painMenstrual.text}" // 월경통
+                cnt_p++
+            }
+    
+            if (binding.painBreast.isChecked == true) {
+                pain[5] = "${binding.painBreast.text}" // 유방 통증
+                cnt_p++
+            }
+    
+            //배변 추가
+            if (binding.bowelConstipation.isChecked == true) {
+                bowel = "${binding.bowelConstipation.text}" // 변비
+                cnt_b++
+    
+            } else if (binding.bowelDiarrhea.isChecked == true) {
+                bowel = "${binding.bowelDiarrhea.text}" // 설사
+                cnt_b++
+            } else {
+                Log.e("오류!", "배변 칩선택이 실패하였습니다.")
+            }
+    
+            //기타 추가
+            if (binding.emotion.isChecked == true) {
+                etc[0] = "${binding.emotion.text}" // 감정기복
+                cnt_e++
+            }
+            if (binding.sexual.isChecked == true) {
+                etc[1] = "${binding.sexual.text}" // 성욕변화
+                cnt_e++
+            }
+            if (binding.appetite.isChecked == true) {
+                etc[2] = "${binding.appetite.text}" // 식욕변화
+                cnt_e++
+            }
+            if (binding.acne.isChecked == true) {
+                etc[3] = "${binding.acne.text}" // 여드름
+                cnt_e++
+            }
+            if (binding.tiredness.isChecked == true) {
+                etc[4] = "${binding.tiredness.text}" // 피로감
+                cnt_e++
+            }
+    
+            if (cnt_p == 0 && cnt_b == 0 && cnt_e == 0) {
+                docRef.collection("$date")
+                    .document("Symptom").delete()
+                    .addOnSuccessListener {
+                        Log.d(
+                            ContentValues.TAG,
+                            "DocumentSnapshot successfully deleted!"
+                        )
+                    }
+                    .addOnFailureListener { e ->
+                        Log.w(
+                            ContentValues.TAG,
+                            "Error deleting document",
+                            e
+                        )
+                    }
+            } else {
+                val data = hashMapOf(
+                    "pain" to listOf(pain[0], pain[1], pain[2], pain[3], pain[4], pain[5]),
+                    "bowel" to bowel,
+                    "etc" to listOf(etc[0], etc[1], etc[2], etc[3], etc[4]),
+                    "isEnabled" to true
+                )
+                docRef.collection("$date")
+                    .document("Symptom").set(data, SetOptions.merge())
+            }
+        }
+    
+        Toast.makeText(applicationContext, "저장되었습니다", Toast.LENGTH_SHORT).show()
+        finish()
+    }
+    ```
 
   <br>
   
