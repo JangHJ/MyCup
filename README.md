@@ -506,22 +506,8 @@ private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
   <br>
   
 - 관심컵 등록 및 삭제
-  
+  [https://github.com/JangHJ/MyCup/blob/main/app/src/main/java/com/yours/mycup/search/BrandDetailActivity.kt]
   ```kotlin
-  when (cupname) {
-        "루나컵 링" -> {
-            fav_selected = false
-            fav_selected2 = false
-            fav_selected3 = false
-            binding.clLunacupRing.visibility = View.VISIBLE
-            binding.btnLunacupRingTinyFavorite.setOnClickListener {
-                if (!fav_selected) {
-                    fav_selected = true
-                    binding.btnLunacupRingTinyFavorite.setBackgroundResource(R.drawable.btn_favorite_active)
-                    Toast.makeText(this, "관심 컵에 추가되었습니다", Toast.LENGTH_SHORT).show()
-                    // 파이어베이스에 관심컵 추가
-                    saveInterest("루나컵 링", "타이니", 15, 38f, 58)
-  . . .
   //관심컵 등록 함수
   private fun saveInterest(
         cupname: String,
@@ -611,7 +597,7 @@ private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
   <br>
   
 - 후기 등록 및 수정/삭제
-  
+  [https://github.com/JangHJ/MyCup/blob/main/app/src/main/java/com/yours/mycup/search/AddReviewActivity.kt]
   ```kotlin
   // 파이어베이스에 후기 저장
         binding.btnReviewSave.setOnClickListener {
@@ -929,8 +915,192 @@ private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
   <br>
       
 - **월경컵 옵션 검색**
-  
+[https://github.com/JangHJ/MyCup/blob/main/app/src/main/java/com/yours/mycup/search/BrandDetailActivity.kt]
 ```kotlin
+private fun optionReview(binding: ActivityBrandDetailBinding, cupname: String) {
+
+        Log.e("후기함수 사이즈", option1_id)
+        Log.e("후기함수 길이", option2_id.toString())
+        Log.e("컵 이름", cupname)
+
+        //질길이
+        when (option2_id) { //질길이
+            1 -> {
+                // 질 길이는 30mm~45mm이고 cupname(컵종류), option1_id(사이즈)에 해당하는 후기들 가져옴
+                lenOption(30, 45)
+            }
+            2 -> {
+                // 질 길이는 46mm~60mm이고 cupname(컵종류), option1_id(사이즈)에 해당하는 후기들 가져옴
+                lenOption(46, 60)
+            }
+            3 -> {
+                // 질 길이는 61mm 이상이고 cupname(컵종류), option1_id(사이즈)에 해당하는 후기들 가져옴
+                lenOption(61, 70)
+            }
+            else -> {
+                // 질 길이는 전체이고 cupname(컵종류), option1_id(사이즈)에 해당하는 후기들 가져옴
+                lenOption(30, 70)
+            }
+
+        }
+        //////////////////////////////////////////////////////////////
+
+
+    }
+
+    private fun lenOption(min: Int, max: Int) {
+        binding.rvBrandReview.visibility = View.GONE
+        binding.tvBranddetailDefault.visibility = View.VISIBLE
+
+        db.collection("ALL").document("Review").get()
+            .addOnSuccessListener {
+                reviewAdapter.data.clear()
+                db.collection("ALL").document("Review").get()
+                    .addOnSuccessListener {
+                        reviewAdapter.data.clear()
+
+                        db.collection("ALL").document("Review").get()
+                            .addOnSuccessListener { document ->
+                                reviewAdapter.data.clear()
+                                if (document.get("rv_num") != null) {
+                                    val num = "${document.get("list_num")}"
+                                    val temp = num.toInt()
+
+                                    Log.e("몇개", "${document.get("rv_num")}")
+                                    for (i in 1..temp) {
+                                        var len2 = "0"
+                                        if (document.get("rvlist$i") != null) {
+                                            product = document.get("rvlist$i.product") as String
+                                            cupsize = document.get("rvlist$i.cupsize") as String
+                                            period = document.get("rvlist$i.period") as String
+                                            feeling = document.get("rvlist$i.feeling") as String
+                                            length = document.get("rvlist$i.length") as String
+                                            size = document.get("rvlist$i.size") as String
+                                            hardness = document.get("rvlist$i.hardness") as String
+                                            if (document.get("rvlist$i.am") != null)
+                                                am = document.get("rvlist$i.am") as String
+                                            if (document.get("rvlist$i.len") != null)
+                                                len = document.get("rvlist$i.len") as String
+
+                                            Log.e("시작테스트 길이", option2_id.toString())
+
+                                            // 리뷰에 질길이 입력된 경우
+                                            if (len != "")
+                                                len2 = len.replace("mm", "")
+
+                                            // 질길이가 전체이고 제품사이즈가 전체인 경우
+                                            if(option2_id == 0 && option1_id == "")
+                                            {
+                                                if (product == cupname) {
+                                                    binding.rvBrandReview.visibility =
+                                                        View.VISIBLE
+                                                    binding.tvBranddetailDefault.visibility =
+                                                        View.GONE
+                                                    //리뷰 추가
+                                                    reviewAdapter.data.add(
+                                                        ReviewData(
+                                                            product,
+                                                            cupsize,
+                                                            am,
+                                                            len,
+                                                            period,
+                                                            feeling,
+                                                            length,
+                                                            size,
+                                                            hardness
+                                                        )
+                                                    )
+                                                    reviewAdapter.notifyDataSetChanged()
+                                                }
+                                            }
+                                            // 질길이가 옵션선택되었고 제품사이즈가 전체인 경우
+                                            else if(option2_id != 0 && option1_id == ""){
+                                                if (min <= len2.toInt() && max >= len2.toInt() && product == cupname) {
+                                                    binding.rvBrandReview.visibility =
+                                                        View.VISIBLE
+                                                    binding.tvBranddetailDefault.visibility =
+                                                        View.GONE
+                                                    //리뷰 추가
+                                                    reviewAdapter.data.add(
+                                                        ReviewData(
+                                                            product,
+                                                            cupsize,
+                                                            am,
+                                                            len,
+                                                            period,
+                                                            feeling,
+                                                            length,
+                                                            size,
+                                                            hardness
+                                                        )
+                                                    )
+                                                    reviewAdapter.notifyDataSetChanged()
+                                                }
+                                            }
+                                            // 질길이가 전체이고 제품사이즈가 옵션선택된 경우
+                                            else if(option2_id == 0 && option1_id != ""){
+                                                if (option1_id == cupsize && product == cupname) {
+                                                    binding.rvBrandReview.visibility =
+                                                        View.VISIBLE
+                                                    binding.tvBranddetailDefault.visibility =
+                                                        View.GONE
+                                                    //리뷰 추가
+                                                    reviewAdapter.data.add(
+                                                        ReviewData(
+                                                            product,
+                                                            cupsize,
+                                                            am,
+                                                            len,
+                                                            period,
+                                                            feeling,
+                                                            length,
+                                                            size,
+                                                            hardness
+                                                        )
+                                                    )
+                                                    reviewAdapter.notifyDataSetChanged()
+                                                }
+                                            }
+                                            // 질길이와 제품사이즈 모두 옵션선택된 경우
+                                            else{
+                                                if (min <= len2.toInt() && max >= len2.toInt() && option1_id == cupsize && product == cupname) {
+                                                    binding.rvBrandReview.visibility =
+                                                        View.VISIBLE
+                                                    binding.tvBranddetailDefault.visibility =
+                                                        View.GONE
+                                                    //리뷰 추가
+                                                    reviewAdapter.data.add(
+                                                        ReviewData(
+                                                            product,
+                                                            cupsize,
+                                                            am,
+                                                            len,
+                                                            period,
+                                                            feeling,
+                                                            length,
+                                                            size,
+                                                            hardness
+                                                        )
+                                                    )
+                                                    reviewAdapter.notifyDataSetChanged()
+                                                }
+                                            }
+                                        }
+                                        Log.e(
+                                            "테스트",
+                                            "$product $cupsize $period $feeling $length $size $hardness"
+                                        )
+                                    }//for문 종료
+                                    reviewAdapter.notifyDataSetChanged()
+                                } else {
+                                    binding.rvBrandReview.visibility = View.GONE
+                                    binding.tvBranddetailDefault.visibility = View.VISIBLE
+                                }
+                            }
+
+                    }//docRef 끝
+            }
+    }
 ```
 
 <br>
